@@ -1,0 +1,2 @@
+17,22 15 * * * nohup php /var/www/vhosts/barcoding.local/httpdocs/beta/index.php back/cron execCron 1 > /dev/null 2>&1 &
+* 23 * * 0 nohup php /var/www/vhosts/barcoding.local/httpdocs/beta/index.php back/cron execCron 2 > /dev/null 2>&1 &

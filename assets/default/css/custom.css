@@ -1,0 +1,46 @@
+body {
+
+ font-family: 'Roboto', sans-serif !important;
+  font-weight: 400;
+
+}
+
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+#login_box{
+	margin:0 auto;
+	margin-top:6%;
+}
+
+.job_title{
+	color: #fff;
+	font-size:65px;
+	text-transform:uppercase;
+	margin-bottom:0px;
+}
+.jobs_label{
+	font-size:11px;
+}
+
+.active_job td{
+	background-color:#5cb85c;
+}
+.navbar{
+margin-bottom:0px !important;
+}
+#barcode_input{
+height:50px;
+font-size:20px;
+}
+#welcome{
+font-family: 'Yellowtail', cursive;
+font-size:60px;
+color:#5cb85c;
+}
+
+.clock {
+    width: 460px;
+    height: 116px;
+    margin: 0 auto;
+}
