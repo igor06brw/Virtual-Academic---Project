@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller {
                 $this->load->template('dashboard/index' ,$data);
 
                 echo 'test33';
-            
+
         }
 
 
