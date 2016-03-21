@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller {
                 $data['packages'] = $this->plugins->get(array('Pulsate','FormStuff','dhtmlXPro','Typehead'));
                 $this->load->template('dashboard/index' ,$data);
 
-            echo 'test';
+                echo 'test33';
         }
 
 
