@@ -10,6 +10,8 @@
 }
 .portlet.light > .portlet-title > .actions {
     padding: 1px 0 14px 0;
+	
+	
 }
 	</style>
 	<!-- BEGIN CONTENT -->
