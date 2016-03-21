@@ -47,7 +47,7 @@
 							  
 							  <p>Hello world - changes</p>
 
-								<p>Changes from dev-branchsssss</p>
+								<p>Changes from dev-branchs</p>
                     
                             
                             </div>
