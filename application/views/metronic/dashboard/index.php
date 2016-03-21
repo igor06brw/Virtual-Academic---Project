@@ -45,7 +45,7 @@
 							<div class="portlet-body">
                               
 							  
-							  <p>Hello world6</p>
+							  <p>Hello world - changes</p>
                     
                             
                             </div>
