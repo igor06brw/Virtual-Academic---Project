@@ -17,7 +17,7 @@ class Main extends CI_Controller {
 				if($this->User_model->isLogged()) redirect('dashboard');
 		        $data['loginController'] = base_url() . "main/login";
                 $this->load->template('login/index' ,$data, FALSE);
-        
+
 	
 	}
       public function login(){
