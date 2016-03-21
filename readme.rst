@@ -10,6 +10,11 @@ Bedziemy pracowac na tej samej bazie, przy kazdym push/pull bedzie import/export
 
 Dodatkowo aby apka zadzialala musimy miec sciezke do projektu http://localhost/projectx/
 
+Przyklad: http://vps2.netforge.pl/projectx/
 
+Dane do logowania:
+
+l: admin
+p: test
 
 
