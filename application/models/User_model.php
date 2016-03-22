@@ -22,8 +22,8 @@ class User_model extends CI_Model {
 			if(!empty($username_password)){
 				
 				$logged = false;
-				$this->db->select('e.status_attendance,e.password,e.employee_id,e.employee_id,e.firstname,e.lastname');
-				$this->db->from('employee e');
+				$this->db->select('*');
+				$this->db->from('users e');
 				$this->db->where('e.username', $username_password['username']);
 				$this->db->limit(1);
 				$is = $this->db->get()->row();
