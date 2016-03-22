@@ -22,19 +22,21 @@ class User_model extends CI_Model {
 			if(!empty($username_password)){
 				
 				$logged = false;
-				$this->db->select('*');
+				$this->db->select('e.*,g.name as group_name,g.icon as group_icon');
 				$this->db->from('users e');
 				$this->db->where('e.username', $username_password['username']);
+				$this->db->join('users_groups g', 'g.id = e.user_group_id', 'left');
 				$this->db->limit(1);
 				$is = $this->db->get()->row();
 				if($is){
 					if($this->encryption->decrypt($is->password) == $username_password['password']){
 						$logged = true;
 						$array['user'] = array(
-							'id' => $is->employee_id,
+							'id' => $is->user_id,
 							'full_name' => $is->firstname . ' '. $is->lastname,
 							'logged_in' => true,
-							'back' => true
+							'fullData' => $is,
+							'group_name' => $is->group_name
 						);
 						$this->session->set_userdata($array);
 					}

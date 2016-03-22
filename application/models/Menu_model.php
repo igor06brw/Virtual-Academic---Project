@@ -8,7 +8,13 @@ class Menu_model extends CI_Model {
                 parent::__construct();
 				$this->load->database('default');
         }
-		
+
+		public function haveAccesss($menu_id,$group_id){
+
+			$query = $this->db->get_where('menu_permission', array('menu_id' => $menu_id, 'group_id' => $group_id),1)->result();
+			return (!empty($query)) ? TRUE : FALSE;
+
+		}
 		public function getChild($menu_id){
 			$query = $this->db->get_where('menu', array('parent_id' => $menu_id))->result();
 			if(!empty($query)){
@@ -23,11 +29,15 @@ class Menu_model extends CI_Model {
 			}
 			return $query;
 		}
-		public function getMenu($employee_id, $active_controller){
+		public function getMenu($user, $active_controller){
 			$data['currentController'] = $active_controller;
 			$menus = $this->db->order_by('sort', 'ASC')->get('menu')->result();
 			if(!empty($menus)) {
 				foreach($menus as $key => $value){
+					if(!$this->haveAccesss($value->id, $user['fullData']->user_group_id)) {
+						unset($menus[$key]);
+						continue;
+					}
 					if(!empty($value->parent_id)) { unset($menus[$key]); continue; }
 					$menus[$key]->submenu = $this->getChild($value->id);
 				}

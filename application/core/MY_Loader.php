@@ -27,7 +27,7 @@ class MY_Loader extends CI_Loader {
 		$data['title'] = isset($addData['pageTitle']) ? 'Wirtualny Dziekanat '. ' > ' . $addData['pageTitle'] : 'Wirtualny Dziekanat';
 		$data['alert'] = $CI->session->userdata('alert');
 		$data['user'] = $CI->session->userdata('user');
-		$data['menu'] = (isset($addData['currentController'])) ? $CI->Menu_model->getMenu($data['user']['id'], $addData['currentController']) : false;
+		$data['menu'] = (isset($addData['currentController'])) ? $CI->Menu_model->getMenu($data['user'],$addData['currentController']) : false;
 		$data['logoutURL'] = base_url() . 'main/logout';
 		return $data;
 	}

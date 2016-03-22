@@ -136,6 +136,7 @@ Demo.init(); // init demo features
 					<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-default">
+						<li><a href="javascript:;"><i class="<?= $user['fullData']->group_icon ?>"></i> <strong><?= $user['group_name'] ?></strong></a><hr style="margin:0"></li>
 						<li>
 							<a href="">
 							<i class="icon-user"></i> My Profile </a>
