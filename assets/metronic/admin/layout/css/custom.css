@@ -78,3 +78,8 @@ Change Quick Sidebar Width
 	text-align:justify;
 	font-size:15px;
 }
+@media (max-width: 480px) {
+	.page-header.navbar .top-menu .navbar-nav > li.dropdown-user .dropdown-toggle {
+		background:none !important;
+	}
+}
