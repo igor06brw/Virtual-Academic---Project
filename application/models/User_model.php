@@ -8,7 +8,26 @@ class User_model extends CI_Model {
                 parent::__construct();
 				$this->load->database('default');
         }
-        public function logout(){
+		public function userData(){
+			return $this->session->userdata('user');
+		}
+		public function ifAdmin($group_id = false){
+			if(!$group_id) $group_id = $this->userData()['fullData']->user_group_id;
+			return ($group_id == $this->config->item('admin_group')) ? TRUE : FALSE;
+		}
+		public function ifTeacher($group_id = false){
+			if(!$group_id) $group_id = $this->userData()['fullData']->user_group_id;
+			return ($group_id == $this->config->item('teacher_group')) ? TRUE : FALSE;
+		}
+		public function ifWorker($group_id = false){
+			if(!$group_id) $group_id = $this->userData()['fullData']->user_group_id;
+			return ($group_id == $this->config->item('worker_group')) ? TRUE : FALSE;
+		}
+		public function ifStudent($group_id = false){
+			if(!$group_id) $group_id = $this->userData()['fullData']->user_group_id;
+			return ($group_id == $this->config->item('student_group')) ? TRUE : FALSE;
+		}
+		public function logout(){
                         $this->session->unset_userdata('user');
                         return true;
          }

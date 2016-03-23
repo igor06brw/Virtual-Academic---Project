@@ -97,7 +97,7 @@ $autoload['helper'] = array('url','global');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('barcoding');
+$autoload['config'] = array('barcoding','global_config');
 
 /*
 | -------------------------------------------------------------------
