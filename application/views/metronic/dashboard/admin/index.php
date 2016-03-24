@@ -44,7 +44,7 @@
                                 </div>
 							<div class="portlet-body">
                               
-							  
+							  asdasdasdasd
 							  <p>Admin View</p>
                     
                             
