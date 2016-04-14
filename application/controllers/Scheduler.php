@@ -22,6 +22,8 @@ class Scheduler extends CI_Controller {
             -> Student
             -> Wykładowca
             -> Pracownik
+
+
         */
 
         if($this->User_model->ifAdmin())  $this->load->template('scheduler/admin/index' ,$data);
