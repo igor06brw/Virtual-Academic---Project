@@ -62,7 +62,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 	<!-- BEGIN LOGIN FORM -->
 	<form class="login-form" action="<?= $loginController ?>" method="post">
-		<h3 class="form-title">Sign In (test2)</h3>
+		<h3 class="form-title">Sign In (test3)</h3>
 	<?php if($alert): ?>
 
 				<div class="alert alert-<?= $alert['type'] ?>" role="alert">
