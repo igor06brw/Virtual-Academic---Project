@@ -8,3 +8,10 @@
 <div class="row Footer">
     <div class="col-xs-12"><p>footer</p></div>
 </div>
+<!--
+<ul>
+<?php foreach($przedmioty as $przedmiot):?>
+    <li><?= $przedmiot->name ?></li>
+<?php endforeach ?>
+</ul>
+!-->

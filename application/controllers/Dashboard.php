@@ -8,7 +8,10 @@ class Dashboard extends CI_Controller {
 			$this->load->model('User_model');
 			//if(!$this->User_model->isLogged()) redirect('main');
         }
-
+        private function getSampleData(){
+            $data = $this->db->get('subjects')->result();
+            return $data;
+        }
 
         public function index(){
                 $data['currentController'] = 'dashboard';
@@ -18,7 +21,8 @@ class Dashboard extends CI_Controller {
                     assets_url() . "template/js/dashboardController.js"
                 );
 
-
+                $data['przedmioty'] = $this->getSampleData();
+            
                 $this->load->template('dashboard/index', $data, true, '','template');
          
 
