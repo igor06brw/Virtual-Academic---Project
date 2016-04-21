@@ -9,7 +9,7 @@ class Scheduler extends CI_Controller {
         if(!$this->User_model->isLogged()) redirect('main');
     }
 
-
+   
     public function index(){
         $data['currentController'] = 'scheduler';
         $data['pageTitle'] = 'Plan zajęć';

@@ -6,7 +6,7 @@ class Dashboard extends CI_Controller {
     function __construct() {
         parent::__construct();
 			$this->load->model('User_model');
-			if(!$this->User_model->isLogged()) redirect('main');
+			//if(!$this->User_model->isLogged()) redirect('main');
         }
 
 
@@ -14,9 +14,19 @@ class Dashboard extends CI_Controller {
                 $data['currentController'] = 'dashboard';
                 $data['pageTitle'] = 'Panel';
                 $data['smallTitle'] = '';
-                $data['packages'] = $this->plugins->get(array('Pulsate','FormStuff','dhtmlXPro','Typehead'));
+                $data['js'] = array(
+                    assets_url() . "template/js/dashboardController.js"
+                );
 
-                // dashboard must have 3 access level
+
+                $this->load->template('dashboard/index', $data, true, '','template');
+         
+
+
+
+            //$data['packages'] = $this->plugins->get(array('Pulsate','FormStuff','dhtmlXPro','Typehead'));
+
+            // dashboard must have 3 access level
                 /*
                     -> Administrator
                     -> Student
@@ -24,11 +34,14 @@ class Dashboard extends CI_Controller {
                     -> Pracownik
                 */
 
+
+            /*
+             *  load metronic
                 if($this->User_model->ifAdmin())  $this->load->template('dashboard/admin/index' ,$data);
                 if($this->User_model->ifStudent())  $this->load->template('dashboard/student/index' ,$data);
                 if($this->User_model->ifWorker())  $this->load->template('dashboard/worker/index' ,$data);
                 if($this->User_model->ifTeacher())  $this->load->template('dashboard/teacher/index' ,$data);
-
+            */
         }
 
 
