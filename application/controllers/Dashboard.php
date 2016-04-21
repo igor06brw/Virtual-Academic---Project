@@ -23,7 +23,6 @@ class Dashboard extends CI_Controller {
          
 
 
-
             //$data['packages'] = $this->plugins->get(array('Pulsate','FormStuff','dhtmlXPro','Typehead'));
 
             // dashboard must have 3 access level

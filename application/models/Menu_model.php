@@ -34,6 +34,7 @@ class Menu_model extends CI_Model {
 			$menus = $this->db->order_by('sort', 'ASC')->get('menu')->result();
 			if(!empty($menus)) {
 				foreach($menus as $key => $value){
+					if(!isset($user['fullData'])) continue;
 					if(!$this->haveAccesss($value->id, $user['fullData']->user_group_id)) {
 						unset($menus[$key]);
 						continue;
