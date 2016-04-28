@@ -8,7 +8,7 @@
 	</div>
 </div>
 <!-- END FOOTER -->
-
+</div>
 </body>
 <!-- END BODY -->
 </html>

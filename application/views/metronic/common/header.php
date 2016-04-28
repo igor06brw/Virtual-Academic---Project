@@ -41,7 +41,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <link href="<?= assets_url() ?>metronic/global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/global/css/plugins-md.css" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="<?= assets_url() ?>metronic/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="<?= assets_url() ?>metronic/admin/layout/css/themes/blue.css" rel="stylesheet" type="text/css">
 <?php if(!empty($css)): ?>
 	<?php foreach($css as $href): ?>
 <link href="<?= $href ?>" rel="stylesheet">	
@@ -99,11 +99,11 @@ Demo.init(); // init demo features
 <!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
 <!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
-<body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed">
+<body class="page-quick-sidebar-over-content page-boxed page-header-fixed">
 <!-- BEGIN HEADER -->
-<div class="page-header md-shadow-z-1-i navbar navbar-fixed-top">
+<div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
-	<div class="page-header-inner">
+	<div class="page-header-inner container">
 		<!-- BEGIN LOGO -->
 		<div class="page-logo">
 			<a href="">
@@ -166,6 +166,7 @@ Demo.init(); // init demo features
 <div class="clearfix">
 </div>
 <!-- BEGIN CONTAINER -->
+<div class="container">
 <div class="page-container">
 
 	<!-- BEGIN SIDEBAR -->
