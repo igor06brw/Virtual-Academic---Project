@@ -1,0 +1,18 @@
+--
+0.1 query view:
+
+CREATE VIEW scheduler AS SELECT
+s.name as subject_name,
+at.type as subject_type_label,
+concat(u.firstname,' ',u.lastname) as teacher_label,
+a.subject_type,
+ag.name as group_label,
+l.name as location_label,
+a.date_start,
+a.date_stop
+FROM nf_activities a
+LEFT JOIN nf_subjects s ON s.id = a.subject_id
+LEFT JOIN nf_activities_types at ON at.id = a.subject_type
+LEFT JOIN nf_users u ON u.user_id = a.teacher_id
+LEFT JOIN nf_locations l ON l.id = a.location_id
+LEFT JOIN nf_activities_groups ag ON ag.id = a.group_id

@@ -34,7 +34,7 @@
                 <div class="portlet light bordered">
                     <div class="portlet-title">
                         <div class="caption">
-                            <i class="icon-bar-chart font-green"></i> Test
+                            <i class="icon-bar-chart font-green"></i> Przykład Kendo UI Grid
                             <span class="caption-subject font-green bold uppercase"></span>
                             <span class="caption-helper"></span>
                         </div>
@@ -43,9 +43,9 @@
 
                     </div>
                     <div class="portlet-body">
+                        <p>Poniższe dane wygenerowane losowo w celu testów. Filtracja, pagniacja, sortowanie po stronie serwera.</p>
 
-
-                        <p>Scheduler</p>
+                        <?= $grid->render() ?>
 
 
                     </div>

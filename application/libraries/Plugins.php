@@ -118,6 +118,16 @@ Class Plugins {
 					assets_url() . 'metronic/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js'
 				)
 			),
+			'Kendo' => array(
+				'css' => array(
+					assets_url() . '/kendo/styles/kendo.common.min.css',
+					assets_url() . '/kendo/styles/kendo.material.min.css'
+				),
+				'js' => array(
+					assets_url() . '/kendo/js/jszip.min.js',
+					assets_url() . '/kendo/js/kendo.all.min.js'
+				),
+			),
 			'Charts' => array(
 				'css' => array(
 				),

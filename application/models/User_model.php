@@ -8,6 +8,11 @@ class User_model extends CI_Model {
                 parent::__construct();
 				$this->load->database('default');
         }
+		public function getTeachers($options = array()){
+			if(!empty($options)) extract($options);
+			$data = $this->db->get_where('users', array('user_group_id' => $this->config->item('teacher_group')))->result();
+			return $data;
+		}
 		public function userData(){
 			return $this->session->userdata('user');
 		}
