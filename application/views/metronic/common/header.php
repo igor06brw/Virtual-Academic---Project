@@ -37,7 +37,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <!-- BEGIN THEME STYLES -->
 <link href="<?= assets_url() ?>/metronic/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-
+	<link href="<?= assets_url() ?>sticklr/jquery-sticklr-1.0.css" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/global/css/plugins-md.css" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -67,12 +67,18 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?= assets_url() ?>metronic/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<script src="<?= assets_url() ?>sticklr/jquery-sticklr-1.0.pack.js" type="text/javascript"></script>
+
+<script src="<?= assets_url() ?>metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <script src="<?= assets_url() ?>metronic/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/scripts/app.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/core.js" type="text/javascript"></script>
 <script>
       jQuery(document).ready(function() {    
          Metronic.init(); // init metronic core components
@@ -101,6 +107,45 @@ Demo.init(); // init demo features
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
 <body class="page-quick-sidebar-over-content page-boxed page-header-fixed">
 <!-- BEGIN HEADER -->
+
+<ul id="email_sidebar" class="sticklr">
+
+
+
+	<li>
+		<a id="email_icon" href="#" class="fa fa-envelope" title="Wyślij maila"></a>
+		<ul>
+			<li class="sticklr-title">
+				<a href="#">Formularz</a>
+			</li>
+			<li>
+				<form action="#">
+					<div class="form-body">
+						<div class="form-group">
+							<label class="control-label">Do:</label>
+							<div class="input-icon">
+								<i class="fa fa-user"></i>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Wiadomość:</label>
+							<textarea class="form-control"></textarea>
+
+						</div>
+					</div>
+				</form>
+			</li>
+		</ul>
+	</li>
+
+
+
+</ul>
+
+
+
+
 <div class="page-header navbar navbar-fixed-top">
 	<!-- BEGIN HEADER INNER -->
 	<div class="page-header-inner container">

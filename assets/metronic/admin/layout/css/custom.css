@@ -83,3 +83,29 @@ Change Quick Sidebar Width
 		background:none !important;
 	}
 }
+
+#email_icon{
+	font-size: 32px;
+	line-height: 27px;
+	color: #fff;
+}
+#email_sidebar{
+	top:100px !important;
+}
+#email_icon:hover,#email_icon:focus{
+	text-decoration: none;
+	color:#fff;
+}
+
+::-webkit-scrollbar {
+	width: 0.5em;
+	height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+	background: slategray;
+}
+
+::-webkit-scrollbar-track {
+	background: #b8c0c8;
+}
