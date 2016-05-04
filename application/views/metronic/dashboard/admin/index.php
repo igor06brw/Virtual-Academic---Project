@@ -46,7 +46,7 @@
                               
 							  asdasdasdasd
 							  <p>Admin View</p>
-                    
+
                             
                             </div>
 							</div>

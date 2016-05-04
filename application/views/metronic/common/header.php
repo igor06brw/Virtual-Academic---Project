@@ -34,10 +34,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END GLOBAL MANDATORY STYLES -->
 <link href="<?= assets_url() ?>metronic/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/global/plugins/bootstrap-modal/css/bootstrap-modal.css" rel="stylesheet" type="text/css"/>
-
+<link href="<?= assets_url() ?>metronic/global/plugins/typeahead/typeahead.css" rel="stylesheet" type="text/css" />
+<link href="<?= assets_url() ?>metronic/global/plugins/dropzone/css/dropzone.css" rel="stylesheet" type="text/css" />
+<link href="<?= assets_url() ?>metronic/global/plugins/dropzone/css/basic.css" rel="stylesheet" type="text/css" />
 <!-- BEGIN THEME STYLES -->
 <link href="<?= assets_url() ?>/metronic/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-	<link href="<?= assets_url() ?>sticklr/jquery-sticklr-1.0.css" rel="stylesheet" type="text/css"/>
+
+<link href="<?= assets_url() ?>/metronic/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+<link href="<?= assets_url() ?>/metronic/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+
+	<link href="<?= assets_url() ?>/metronic/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" type="text/css" />
 <link href="<?= assets_url() ?>metronic/global/css/components-md.css" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/global/css/plugins-md.css" rel="stylesheet" type="text/css"/>
 <link href="<?= assets_url() ?>metronic/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
@@ -67,17 +73,34 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="<?= assets_url() ?>metronic/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
-
-<script src="<?= assets_url() ?>sticklr/jquery-sticklr-1.0.pack.js" type="text/javascript"></script>
-
+<script src="<?= assets_url() ?>metronic/global/plugins/dropzone/dropzone.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/bootstrap-toastr/toastr.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>panelslider/jquery.panelslider.min.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/vendor/load-image.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <script src="<?= assets_url() ?>metronic/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/global/scripts/app.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/layout.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
 <script src="<?= assets_url() ?>metronic/admin/layout/scripts/demo.js" type="text/javascript"></script>
-<script src="<?= assets_url() ?>metronic/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/typeahead/handlebars.min.js" type="text/javascript"></script>
+<script src="<?= assets_url() ?>metronic/global/plugins/typeahead/typeahead.bundle.min.js" type="text/javascript"></script>
+
+
 <script src="<?= assets_url() ?>metronic/core.js" type="text/javascript"></script>
 <script>
       jQuery(document).ready(function() {    
@@ -107,34 +130,186 @@ Demo.init(); // init demo features
 <!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
 <body class="page-quick-sidebar-over-content page-boxed page-header-fixed">
 <!-- BEGIN HEADER -->
+<input type="hidden" id="base_url" value="<?= base_url() ?>">
+<a id="right-panel-link" href="#right-panel"><div class="email_side"><i class="fa fa-envelope-o"></i></div></a>
+<!-- Right panel -->
+<div id="right-panel" class="panel">
+	<div style="height: 100%;" class="portlet light bordered">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="icon-envelope-letter font-blue-hoki"></i>
+				<span class="caption-subject bold font-blue-hoki uppercase"> Formularz </span>
+			</div>
 
+		</div>
+		<div class="portlet-body">
+			<form id="sendMail" action="<?= base_url() . "mailling/sendMail" ?>" method="POST">
+			<div class="form-group">
+				<label class="control-label">Do:</label>
+
+
+				<input id="user_autocomplete" type="text" class="form-control">
+				<input type="hidden" name="user_id" class="form-control">
+
+			</div>
+			<div class="form-group">
+				<label class="control-label">Temat:</label>
+
+
+				<input type="text" name="subject" class="form-control">
+
+			</div>
+			<div class="form-group">
+				<label class="control-label">Wiadomość:</label>
+				<textarea style="height:250px" name="description" class="form-control"></textarea>
+
+			</div>
+			</form>
+			<div class="form-group">
+				<label class="control-label">Załącznik:</label>
+			<form id="fileupload" action="<?= base_url() . "mailling/uploadFile" ?>" method="POST" enctype="multipart/form-data">
+				<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+				<div class="row fileupload-buttonbar">
+					<div class="col-md-12">
+						<!-- The fileinput-button span is used to style the file input field as button -->
+                                        <span class="btn btn-xs green fileinput-button">
+                                            <i class="fa fa-plus"></i>
+                                            <span> Dodaj pliki... </span>
+											<input type="hidden" name="tmp_catalog" value="<?= md5(time()) ?>">
+                                            <input type="file" name="files" multiple=""> </span>
+
+
+
+						<!-- The global file processing state -->
+
+					</div>
+					<!-- The global progress information -->
+
+				</div>
+				<!-- The table listing the files available for upload/download -->
+				<table role="presentation" class="table table-striped clearfix">
+					<tbody class="files"> </tbody>
+				</table>
+			</form>
+			</div>
+			<button id="form_send" type="button" style="width:100%; margin:0 auto;text-align:center" class="btn btn-primary blue">Wyślij</button>
+			<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+			<script id="template-upload" type="text/x-tmpl"> {% for (var i=0, file; file=o.files[i]; i++) { %}
+                        <tr class="template-upload fade">
+                            <td>
+                                <p class="name">{%=file.name%}</p>
+                                <strong class="error text-danger label label-danger"></strong>
+                            </td>
+                            <td>
+                                <p class="size">Processing...</p>
+                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                </div>
+                            </td>
+                            <td> {% if (!i && !o.options.autoUpload) { %}
+                                <button class="btn btn-xs blue start" disabled>
+                                    <i class="fa fa-upload"></i>
+                                    <span>Start</span>
+                                </button> {% } %} {% if (!i) { %}
+                                <button class="btn btn-xs red cancel">
+                                    <i class="fa fa-ban"></i>
+
+                                </button> {% } %} </td>
+                        </tr> {% } %} </script>
+			<!-- The template to display files available for download -->
+			<script id="template-download" type="text/x-tmpl"> {% for (var i=0, file; file=o.files[i]; i++) { %}
+                        <tr class="template-download fade">
+                            <td>
+                                <p class="name"> {% if (file.url) { %}
+                                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl? 'data-gallery': ''%}>{%=file.name%}</a> {% } else { %}
+                                    <span>{%=file.name%}</span> {% } %} </p> {% if (file.error) { %}
+                                <div>
+                                    <span class="label label-sm label-danger">Error</span> {%=file.error%}</div> {% } %} </td>
+                            <td>
+                                <span class="size">{%=o.formatFileSize(file.size)%}</span>
+                            </td>
+                            <td> {% if (file.deleteUrl) { %}
+                                <button class="btn red delete btn-xs" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}" {% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}' {% } %}>
+                                    <i class="fa fa-trash-o"></i>
+                                    <span>Delete</span>
+                                </button>
+                                <input type="checkbox" name="delete" value="1" class="toggle"> {% } else { %}
+                                <button class="btn btn-xs yellow cancel btn-sm">
+                                    <i class="fa fa-ban"></i>
+                                </button> {% } %} </td>
+                        </tr> {% } %} </script>
+
+		</div>
+	</div>
+<!--
+	<div style="    padding: 9px;" class="form-body">
+		<div class="form-group">
+			<label class="control-label">Do:</label>
+
+
+			<input id="user_autocomplete" type="text" class="form-control">
+
+		</div>
+		<div class="form-group">
+			<label class="control-label">Temat:</label>
+
+
+			<input type="text" class="form-control">
+
+		</div>
+		<div class="form-group">
+			<label class="control-label">Wiadomość:</label>
+			<textarea style="height:250px" class="form-control"></textarea>
+
+		</div>
+		<div class="form-group">
+
+		</div>
+	</div> !-->
+
+</div>
+
+
+<!--
 <ul id="email_sidebar" class="sticklr">
 
 
 
 	<li>
 		<a id="email_icon" href="#" class="fa fa-envelope" title="Wyślij maila"></a>
-		<ul>
+		<ul id="side">
 			<li class="sticklr-title">
 				<a href="#">Formularz</a>
 			</li>
 			<li>
-				<form action="#">
-					<div class="form-body">
+
+					<div style="    padding: 9px;" class="form-body">
 						<div class="form-group">
 							<label class="control-label">Do:</label>
-							<div class="input-icon">
-								<i class="fa fa-user"></i>
+
+
+								<input id="user_autocomplete" type="text" class="form-control">
+
+						</div>
+						<div class="form-group">
+							<label class="control-label">Temat:</label>
+
+
 								<input type="text" class="form-control">
-							</div>
+
 						</div>
 						<div class="form-group">
 							<label class="control-label">Wiadomość:</label>
-							<textarea class="form-control"></textarea>
+							<textarea style="height:250px" class="form-control"></textarea>
 
 						</div>
+						<div class="form-group">
+							<form action="../assets/global/plugins/dropzone/upload.php" class="dropzone dropzone-file-area" id="my-dropzone" style="width: 100%; margin-top: 10px;">
+							</form>
+						</div>
 					</div>
-				</form>
+
+
 			</li>
 		</ul>
 	</li>
@@ -142,7 +317,7 @@ Demo.init(); // init demo features
 
 
 </ul>
-
+!-->
 
 
 
@@ -230,4 +405,3 @@ Demo.init(); // init demo features
 		</div><!-- /.modal -->
 		 
 	<?php endif ?>
-	

@@ -109,3 +109,74 @@ Change Quick Sidebar Width
 ::-webkit-scrollbar-track {
 	background: #b8c0c8;
 }
+/* Slide page 200px to the right when panel is opened */
+body.ps-active {
+	transform: translateX(200px);
+}
+
+/* Body animation when left panel is opened */
+body.ps-active {
+	-webkit-transform: translateX(260px);
+	-ms-transform: translateX(260px);
+	transform: translateX(260px);
+}
+
+/* Body animation when right panel is opened */
+body.ps-active-right {
+	-webkit-transform: translateX(-260px);
+	-ms-transform: translateX(-260px);
+	transform: translateX(-260px);
+}
+
+/* Panel styles */
+.panel {
+	position: fixed;
+	top: 0;
+	width: 260px;
+	height: 100%;
+	/* padding: 20px; */
+	/* background-color: #333; */
+	box-shadow: inset 0 0 5px 5px #222;
+}
+
+#left-panel {
+	left: 0;
+
+	/* Hide panel on the left of the page. When this panel is opened the
+    class .ps-active will be apllied to body, and it's X translation will
+    reveal the panel. */
+	-webkit-transform: translateX(-260px);
+	-ms-transform: translateX(-260px);
+	transform: translateX(-260px);
+}
+
+#right-panel {
+	right: 0;
+
+	/* Hide panel on the right of the page. When this panel is opened the
+    class .ps-active-right will be apllied to body, and it's X translation
+    will reveal the panel. */
+	-webkit-transform: translateX(260px);
+	-ms-transform: translateX(260px);
+	transform: translateX(260px);
+}
+.email_side{
+	position: absolute;
+	top: 40%;
+	right: 0px;
+	border-radius: 4px;
+	background-color: #536881;
+	padding: 11px;
+	color:#fff;
+	font-size:15px;
+	z-index: 99999;
+}
+
+.template-upload p,.template-upload span,.template-download p,.template-download span{
+	font-size:12px !important;
+}
+
+#right-panel strong{
+	color:#fff;
+	font-size:9px !important;
+}
