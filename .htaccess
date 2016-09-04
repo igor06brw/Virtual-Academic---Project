@@ -1,6 +1,6 @@
 Options +FollowSymLinks -MultiViews
 RewriteEngine on
-RewriteBase /projectx/
+RewriteBase /Wirtualna_Uczelnia/Wirtualna_Uczelnia/
 RewriteCond %{REQUEST_FILENAME} !-f  
 RewriteCond %{REQUEST_FILENAME} !-d  
 RewriteRule ^(.*)$ index.php?/$1 [L] 
